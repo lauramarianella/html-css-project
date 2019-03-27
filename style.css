@@ -1,0 +1,107 @@
+:root{
+    --min-width-screen: 100vh;  
+    --min-height-screen: 100vh;
+}
+
+
+body{
+    margin:0;
+    min-height: var(--min-height-screen);
+}
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.navBar{
+    background-color: #3a3633;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navBar > a{
+    color: white;
+    margin: 0 40px;
+    text-decoration: none;
+    font-family: 'Poppins';
+}
+
+.logo {
+    display: block;
+    height: 30px;
+    align-self: flex-start;
+}
+
+#backPic{
+    background: url('imgs/bg.jpg');
+    background-size: cover;
+
+    display: flex;/*for the white block box*/
+    justify-content: center;
+    align-items: center;
+    flex-grow: 2;
+    min-width: 100vh;
+    min-height: 300px;
+}
+
+.whiteBloxCentered{
+    border: 5px solid white;
+    color: white;
+}
+.whiteBoxMiddle{
+    height: 50px;
+    width: 100px;
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    /* align-self: center; */
+    min-width: var(--min-width-screen);
+}
+
+.treeFeatures{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.boxFeature{
+    height: 250px;
+    width: 300px;
+    border: 5px solid grey;
+}
+
+.btnFeatures{
+    color: #fff;
+    background-color: #000;
+    border: 1px solid black;
+    padding: 4px 15px;
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+}
+
+.coolText{
+    flex-grow: 0.5;
+    color:white;
+    background-color: #000;
+}
+.gradiente{
+    flex-grow: 0.5;
+    color:black;
+    background-color: skyblue;
+}
+
+.animals{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.product-img {
+    width: 100%;
+    display: block;
+    outline: 1px solid black;
+    height: 200px;
+  }
+  
