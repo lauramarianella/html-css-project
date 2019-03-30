@@ -3,7 +3,9 @@
     --min-height-screen: 100vh;
     --min-height-sections:250px;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body{
     margin:0;
     min-height: var(--min-height-screen);
@@ -18,7 +20,7 @@ body{
 
 
 /* Ini: Navigation bar */
-.navBar{
+/* .navBar{
     background-color: #3a3633;
     padding: 15px;
     display: flex;
@@ -27,9 +29,9 @@ body{
 }
 .navBar > a{
     color: white;
-    margin: 0 40px;/*without this, the '<a>s' are toguether also the logo*/
+    margin: 0 40px;/without this, the '<a>s' are toguether also the logo/
     text-decoration: none;
-    /* font-family: 'Poppins'; */
+    / font-family: 'Poppins'; /
     transition: opacity 0.2s ease-in-out;
 }
 .navBar > a:hover{
@@ -40,13 +42,103 @@ body{
     height: 30px;
 }
 .navBar > .aLogo {
-    /* justify-content: flex-start; */
-    /* margin-left: 0; */
+    / justify-content: flex-start; /
+    / margin-left: 0; /
     position: absolute;
     left: 0;
-}
+} */
 /* End: Navigation bar */
 
+/* Ini: dropdown menu */
+/* https://www.w3schools.com/csS/tryit.asp?filename=trycss_dropdown_right */
+.navBar{
+    background-color: #3a3633;
+    /* padding: 15px; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    min-height: 62px;
+    position: fixed;
+    width:100%;
+}
+.navBar .logo {
+    display: block;
+    height: 40px;
+    width: 100px;
+}
+.navBar > .aLogo {
+    position: absolute;
+    left: 10px;
+} 
+.dropdown:first-child {
+    color: lime;
+}
+
+.dropbtn {
+    background-color:  #3a3633;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+    .dropdown {
+        display:none;
+    }
+    #idAllwaysShow{
+        display:inline-block;
+    }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #3a3633;
+    min-width: 100px;/*160px; */
+    border-top: 16px #fff;/* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+
+    text-align: center;
+    font-size: 14px;
+    /* top:63px; */
+    width: 100%;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    /* opacity:0.5; */
+    background-color: gray;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    /* background-color: #3e8e41; */
+    opacity:0.5;
+  }
+
+  .dropdown:hover .dropbtnLogo {
+    opacity:0.5;
+  }
+
+  @media (min-width: 768px) {
+    .dropdown {
+        position: relative;
+        display:inline-block;
+    } 
+  }
+/* End: dropdown menu */
 
 
 /* Ini: Background img Falcon 9 */
@@ -54,47 +146,133 @@ body{
     background: url('imgs/bg.jpg');
     background-size: cover;
 
+    margin: 0;
+    left: 0;
     display: flex;/*for the white block box*/
     justify-content: center;
     align-items: center;
     /* flex-grow: 5; */
     /* min-width: 100vh;
     min-height: 300px; */
+
     min-height: var(--min-height-screen);
+    min-width: 100%;
 }
 
-.whiteBloxCentered{
-    border: 5px solid white;
-    color: white;    
+/* Ini: main content falcon x */
+.container {
+    border:5px solid white;
+    text-align: center;
+
+    display: grid;
+
+    grid-template-rows: auto auto;
+        grid-template-areas:
+          'title'
+          'main';
+  }
+.container .title{
+    font-size: 30px;
+    color: white;
 }
-.whiteBoxMiddle{
-    height: 50px;
-    width: 100px;
+.container .paragraph{
+    font-size: 16px;
+    color: white;
+    border-top-style: dotted;
+
+    display: flex;
+    flex-direction: row;
 }
+
+.paragraph p{
+    text-align: left;
+}
+
+.titleCentered{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.titleBox {
+    grid-area: title;
+    /* background: rebeccapurple;   */
+    height: 80px;
+    width: 250px;
+
+    padding: 10px;
+}
+.mainBox {
+    grid-area: main;    
+    /* background-color: midnightblue; */
+    background-color:#8a9091;
+    opacity: 0.5;
+
+    height: 250px;
+    width: 250px;
+
+    padding: 10px;
+}
+  
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: auto auto;
+        grid-template-areas:
+            'title main';
+    }
+
+    .titleBox {
+        height: 300px;
+        width: 300px;
+        border-width: 8px 0px 8px 8px;
+    }
+
+    .mainBox {
+        height: 300px;
+        width: 300px;
+        border-width: 8px 8px 8px 0px;
+    }
+}
+  
+  
+/* Fin: main content falcon x */
+
+
 /* Fin: Background img Falcon 9 */
 
 
 /* Ini: Features */
 .treeFeatures{
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
     padding: 50px;
     min-height: var(--min-height-sections);
+
+    display: grid;
+    grid-row-gap: 10px;
+
+    grid-template-rows: auto auto auto;
+        grid-template-areas:
+          'boxFeature1'
+          'boxFeature2'
+          'boxFeature3';
 }
 .treeFeatures > .boxFeature{
-    min-height: 100%;
-    min-width: 20%;/*250px*/
+    height: 390px;
+    width: 300px;
+
     border: 1px solid #e1d7d7;
     border-radius:5px; 
     border-style: groove;
     box-shadow: 2px 1px 1px 1px #ddd;
 
     overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
 }
 .boxFeature > img{
     display: block;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     padding: 10px;
 }
 .boxFeature > p{
@@ -104,7 +282,7 @@ body{
     width: 250px;
     /* max-width: 250px; */
     height: 160px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     padding: 10px;
 }
 .boxFeature > span{
@@ -131,6 +309,15 @@ body{
 .btnFeatures:hover{
     border: 3px solid #2eb7ef;
     border-style: double;
+}
+
+@media (min-width: 768px) {
+    .treeFeatures {
+        grid-column-gap: 20px;
+        grid-template-columns: auto auto auto;
+        grid-template-areas:
+            'boxFeature1 boxFeature2 boxFeature3';
+    }
 }
 /* Fin: Features */
 

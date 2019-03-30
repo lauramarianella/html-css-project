@@ -5,9 +5,9 @@
        <link rel="stylesheet" type="text/css" href="style.css">
    </head>
    <body>
-    <div class="mainContainer">
+    <div class="mainContainer" id="idMainContent">
 
-       <div class="navBar">
+       <!-- <div class="navBar">
             <a href="#" class="aLogo">
                 <img src="imgs/logo.svg" class="logo" />
             </a>
@@ -15,18 +15,59 @@
             <a href="#">Advantages</a>
             <a href="#">Galery</a>
             <a href="#">Products</a>
-        </div><!-- End: navBar -->
-       
-        <div class="backPic">
-            <div class="whiteBloxCentered" id="whiteBoxMiddle"><h1>Introducing Falcon 9</h1></div>
-            <div class="whiteBloxCentered" id="whiteBoxMiddle" style="background:grey"><h3>We make dreams come true</h3>
-                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </div>
+        </div>End: navBar -->
+
+        <!-- Ini: dropdown menu -->
+        <div class="navBar" id="idNavBar">
+
+            <div id="idAllwaysShow" class="dropdown aLogo">
+                <a href="#idMainContent" class="dropbtnLogo">
+                    <img src="imgs/logo.svg" class="logo"/>
+                </a>
+            </div>
+
+            <div class="dropdown"> 
+                <a href="#idCoolText" class="dropbtn">Features</a>
+                <div class="dropdown-content"></div>
+            </div>
+
+            <div  class="dropdown">
+                <a href="#idCoolText" class="dropbtn">Advantages</a>
+                <div class="dropdown-content"></div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#idGalery" class="dropbtn">Galery</a>
+                <div class="dropdown-content"></div>
+            </div>
+
+            <div id="idAllwaysShow" class="dropdown">
+                <button class="dropbtn">Products</button>
+                <div class="dropdown-content">
+                    <a href="https://www.spacex.com/falcon9" target="_blanck">Falcon 9</a>
+                    <a href="https://www.tesla.com/models" target="_blanck">Model S</a>
+                    <a href="https://www.apple.com/ca/iphone/" target="_blanck">iPhone</a>
                 </div>
+            </div>
+        </div>             
+        <!-- End: dropdown menu -->
+       
+        <div class="backPic" id="idBackPic">
+            <div class="container">
+                <div class="titleBox titleCentered"><span class="title">Introducing Falcon 9</span></div>
+                    <div class="mainBox">
+                    <div><span class="title">We make dreams come true</span></div>
+                    <div class="paragraph">
+                        <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p></div>
+                        <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p></div>
+                    </div>
+                </div>
+            </div>
         </div><!-- End: backPic -->
 
 
-        <div class="treeFeatures">
-            <div class="boxFeature">
+        <div class="treeFeatures" id="idFeatures">
+            <div class="boxFeature boxFeature1">
                 <img src="imgs/icon1.svg"/>
                 <span>Amazing feature 1</span>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -34,7 +75,7 @@
                 </p>
                 <span class="btnFeatures">Get it</span>
             </div>
-            <div class="boxFeature">
+            <div class="boxFeature boxFeature2">
                 <img src="imgs/icon2.svg"/>
                 <span>Amazing feature 2</span>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -42,7 +83,7 @@
                 </p>
                 <span class="btnFeatures">Sell it</span>
             </div>
-            <div class="boxFeature">
+            <div class="boxFeature boxFeature3">
                 <img src="imgs/icon3.svg"/>
                 <span>Amazing feature 3</span>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -54,7 +95,7 @@
 
 
 
-        <div class="coolText">
+        <div class="coolText" id="idCoolText">
             <span class="marginsCoolText">Some cool text</span>
             <p class="marginsCoolText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur.
@@ -72,7 +113,7 @@
         </div><!-- Fin: gradiente-->
 
 
-        <div class="gridImages">
+        <div class="gridImages" id="idGalery">
                 <div class="containerFather"><!--<div class="containerFather containerProCat">-->
                     <div class="containerChild containerTesla"> 
                         <!-- <img src="imgs/tesla.jpg" class="product-img" /> -->
