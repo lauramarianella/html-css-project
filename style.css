@@ -483,35 +483,121 @@ body{
 /* Ini: form */
 .form{
     min-height: var(--min-height-sections);
-    display: flex;
+
+    display:flex;
     align-items: center;
     justify-content: center;
 }
-
-text-field {
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #0096fb;
-    margin: 10px auto;
+.form label {
+    font-size: 1rem;
     display: block;
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
-}
-
-.checkbox-label {
     text-align: left;
-    margin: 10px;
-    margin-left: 0;
 }
-  
-/* End: form */
+/* Ini: textbox with img as button */
+/*Don't forget to add Font Awesome CSS : "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"*/
+    input[type="email"] {
+        width: 290px;
+        height: 42px;
+        padding: 9px 8px;
 
-/* Ini: Footer */
+        border: 2px solid #aaa;
+        border-radius: 4px;
+        margin: 8px 0;
+        outline: none;
+        
+        box-sizing: border-box;
+        transition: 0.3s;
+    }
+    
+    input[type="email"]:focus {
+        border-color: black;
+        box-shadow: 0 0 8px 0 black;
+    }
+    
+    .inputWithIcon {
+        position: relative;
+    }
+    
+    .inputWithIcon img {
+        position: absolute;
+        left: 250px;
+        top: 8px;
+        padding: 9px 8px;
+        color: #aaa;
+        transition: 0.3s;
+    }
+    
+    .inputWithIcon input[type="email"]:focus + img {
+        color: black;
+    }
+    
+    .inputWithIcon.inputIconBg img {
+        background-color: #aaa;
+        color: #fff;
+        border-radius: 4px;
+    }
+    
+    .inputWithIcon.inputIconBg input[type="email"]:focus + img {
+        color: #fff;
+        background-color: black;
+    }
+
+    .inputWithIcon.inputIconBg img:hover{
+        cursor: pointer;
+    }
+
+/* Fin: textbox with img as button */ 
+
+/* Ini: img as checkbox */
+    .form .checkbox-label {
+        text-align: left;
+        margin-left: 0px;
+    }
+    .checkbox-label img{
+        border-radius: 4px;
+        margin-right: 10px;
+        border: 1.5px solid grey; 
+    }
+      
+    input[type="checkbox"]{
+        visibility: hidden;
+    }
+    
+    .form input[type="checkbox"]:checked + img{
+        border-color: #ddd;
+        background: black;
+    }
+    
+
+/* Fin: img as checkbox */
+
+/* Fin: form */
+
+/* Ini: footer */
 .footer{
-    background-color: black;
-    color: white;
-    /* align-self: center; */
-    min-width: var(--min-width-screen);
+    min-height: var(--min-height-sections);
+    border-top: 1px solid grey;
+
+    padding: 20px;
+
+    display: grid;
+    column-gap: 100px;
+    justify-content: center;
+    grid-template-areas: 
+    'col1 col2'
+    'col3 col4';
 }
-/* Fin: Footer */
+.col1{
+    justify-self: center;
+}
+
+@media (min-width: 768px){
+    .footer{
+        column-gap: 300px;
+        grid-template-areas: 
+        'col1 col2 col3 col4';
+    }
+
+}
+
+/* Fin: footer */
